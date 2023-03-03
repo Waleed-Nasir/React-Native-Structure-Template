@@ -1,0 +1,32 @@
+{
+  "name": "@Waleed-Nasir/React-Native-Structure-Template",
+  "version": "0.0.1",
+  "description": "React-Native-Structure-Template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Waleed-Nasir/React-Native-Structure-Template.git"
+  },
+  "author": "Waleed-Nasir Lyon <onet7241@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Waleed-Nasir/React-Native-Structure-Template/issues"
+  },
+  "main": "post-init.script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "react-native"
+  ],
+  "dependencies": {
+    "kleur": "^4.1.4",
+    "prompts": "^2.4.1"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
+}
