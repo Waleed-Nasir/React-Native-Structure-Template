@@ -1,9 +1,8 @@
 const prompts = require('prompts');
-const typescriptPlugin = require('./compile-js');
 const printSuccessPlugin = require('./printSuccess');
 
 // List of plugin to apply (ordered)
-const plugins = [typescriptPlugin, printSuccessPlugin];
+const plugins = [printSuccessPlugin];
 
 /**
  * Apply a plugin
