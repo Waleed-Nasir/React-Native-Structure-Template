@@ -13,7 +13,7 @@ import Item from '../../components/UI/Item';
 import Product from '../../components/UI/Product';
 import SingleProduct from '../../components/UI/SingleProduct';
 import Text from '../../components/UI/Text';
-// import { FacebookButton, GoogleButton, MenuHeader } from '../../components';
+import { FacebookButton, GoogleButton, MenuHeader } from '../../components';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './home.styles';
@@ -138,9 +138,9 @@ const Home = (props) => {
             />
           </View>
 
+          <GoogleButton />
           {/* <View style={styles.buttonContainer}>
         <FacebookButton />
-        <GoogleButton />
       </View> */}
         </View>
       </Layout>
