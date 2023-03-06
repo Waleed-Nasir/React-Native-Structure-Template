@@ -139,8 +139,8 @@ const Home = (props) => {
           </View>
 
           <GoogleButton />
+          <FacebookButton />
           {/* <View style={styles.buttonContainer}>
-        <FacebookButton />
       </View> */}
         </View>
       </Layout>
