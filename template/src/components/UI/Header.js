@@ -26,12 +26,11 @@ const Header = ({
         backgroundColor="white"
         barStyle={'dark-content'}
       />
-      
-      <Box safeAreaTop bg={'theme.100'} height={70} />
+      <Box safeAreaTop bg={'theme.background'} height={70} />
       <HStack
         position={'absolute'}
         safeAreaTop
-        bg={'theme.100'}
+        bg={'theme.background'}
         paddingX={5}
         py="2"
         top={0}
@@ -54,7 +53,7 @@ const Header = ({
             />
           ) : LeftText ? (
             <Text
-              color={colors.text}
+              color={'theme.text'}
               onPress={PressLeft}
               fontSize={Platform.isPad ? '20' : "16"}
             >
@@ -74,7 +73,7 @@ const Header = ({
             <Image source={CenterLogo} />
           ) : CenterText ? (
             <Text
-              color={colors.text}
+              color={'theme.text'}
               fontSize={Platform.isPad ? '20' : "16"}
               h={Platform.isPad ? 10 : 7}
               {...TextProps}
@@ -98,7 +97,7 @@ const Header = ({
             />
           ) : RightText ? (
             <Text
-              color={colors.text}
+              color={'theme.text'}
               fontSize="16"
             >
               {RightText}

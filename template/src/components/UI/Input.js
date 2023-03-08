@@ -6,17 +6,16 @@
  * @flow strict-local
  */
 
+import { View } from 'native-base';
 import React from 'react';
 import {
-  Dimensions, Image, Platform, StyleSheet,
-  Text, TextInput, View
+  Dimensions, Image, Platform, StyleSheet, TextInput
 } from 'react-native';
-import { theme } from '../../theme';
 import ICON from './Icon';
-
+import Text from './Text';
+import { useTheme } from 'native-base';
 const { width } = Dimensions.get('screen');
-
-const { colors } = theme
+ 
 
 const Input = ({
   leftIcon = false,
@@ -29,15 +28,16 @@ const Input = ({
   InputProps = {},
   IconPress = () => { },
 }) => {
+const {colors} = useTheme();
   return (
-    <View style={styles.Input}>
+    <View style={[styles.Input]} >
       <Text style={[styles.label, LableStyle]}>{label}</Text>
-      <View style={[styles.SectionStyle, SectionStyle]}>
+      <View style={[styles.SectionStyle,{backgroundColor: colors?.theme?.background,borderColor:colors?.theme?.borderColor}, SectionStyle]}>
         {leftIcon ? (
           <Image source={leftIcon} style={styles.ImageStyle} />
         ) : null}
         <TextInput
-          style={[styles.InputStyle, InputStyle]}
+          style={[styles.InputStyle,{color: colors.theme.text}, InputStyle]}
           placeholder={placeholder}
           underlineColorAndroid="transparent"
           {...InputProps}
@@ -47,7 +47,6 @@ const Input = ({
             onPress={IconPress}
             icon={rightIcon}
             style={[styles.ImageStyle, { marginHorizontal: 5 }]}
-            bg={'theme.0'}
           />
         ) : null}
       </View>
@@ -64,9 +63,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white,
     borderWidth: 1,
-    borderColor: '#FFF',
     borderRadius: 10,
     marginVertical: 10,
   },
@@ -81,10 +79,10 @@ const styles = StyleSheet.create({
   InputStyle: {
     flex: 1,
     height: Platform.isPad ? 60 : 50,
-    color: colors.black,
+    // color: colors.black,
   },
   label: {
-    color: colors.black,
+    // color: colors.black,
     fontSize: 14,
     fontWeight: '500',
   },

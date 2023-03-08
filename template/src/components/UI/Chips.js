@@ -7,9 +7,9 @@
  */
 
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet,  } from "react-native";
 import Text from "./Text";
-import { Pressable } from "native-base";
+import { Pressable,View } from "native-base";
 import { theme } from "../../theme";
 const {
   colors
@@ -27,7 +27,7 @@ const {
 const Chips = ({ title, image, onPress }) => {
 
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPress} >
       {({ isPressed }) => {
         return (
           <View
@@ -41,6 +41,7 @@ const Chips = ({ title, image, onPress }) => {
                 ],
               },
             ]}
+            bg={'theme.background'}
           >
             <View style={styles.CardImage}>
               <Image
@@ -49,7 +50,7 @@ const Chips = ({ title, image, onPress }) => {
                 resizeMode={"contain"}
               />
             </View>
-            <Text style={styles.text}>{title}</Text>
+            <Text style={styles.text} color={'theme.text'}  >{title}</Text>
           </View>
         );
       }}
@@ -60,7 +61,6 @@ const Chips = ({ title, image, onPress }) => {
 const styles = StyleSheet.create({
   Card: {
     height: 40,
-    backgroundColor: white,
     marginHorizontal: 10,
     marginVertical: 4,
     borderRadius: 20,
@@ -88,7 +88,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     // fontFamily: FONTFAMILY.PoppinsRegular,
     paddingHorizontal: 20,
-    color: text
   },
   Image: {
     width: "100%",

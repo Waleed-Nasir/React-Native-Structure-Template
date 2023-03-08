@@ -6,19 +6,21 @@
  * @flow strict-local
  */
 
-import { ScrollView } from "native-base";
+import { ScrollView, useTheme } from "native-base";
 import { useFormControlProvider } from "native-base/lib/typescript/components/composites/FormControl";
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 const Layout = ({ Header = () => {}, Footer = () => {}, children,height=120 }) => {
+const {colors} = useTheme();
+
   return (
     // <View style={styles.layout}>
     <LinearGradient
       start={{ x: 2, y: 1 }}
       end={{ x: 2, y: 0.1 }}
-      colors={["#ff2fff70", "#23dcad70","#13d8ff70",'#ffe00970','#ff640c70']}
+      colors={colors.theme.layout}
       style={styles.layout}
     >
       {Header()}

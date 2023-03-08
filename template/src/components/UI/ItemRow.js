@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: FONTFAMILY.PoppinsMedium,
     paddingHorizontal: 15,
-    color: '#fff',
     fontWeight: '600',
     textShadowColor: Colors.SolidPink,
     textShadowOffset: { width: 1, height: 1 },

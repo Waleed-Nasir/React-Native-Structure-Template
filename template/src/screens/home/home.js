@@ -43,10 +43,10 @@ const Home = (props) => {
           <View style={[styles.ViewColumn]}>
             <Text>Icons Buttons Area</Text>
             <View style={[styles.View, { width: '100%', justifyContent: 'flex-start' }]}>
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
             </View>
           </View>
           <View style={[styles.View, styles.ViewColumn]}>
@@ -63,12 +63,12 @@ const Home = (props) => {
             <View style={[styles.View, { justifyContent: 'space-between', width: '100%' }]}>
               <AppButton
                 {...{
-                  bg: `theme.200`,
+                  bg: `theme.danger`,
                   _hover: {
-                    bg: `theme.200:alpha.80`,
+                    bg: `theme.danger:alpha.80`,
                   },
                   _pressed: {
-                    bg: `theme.200:alpha.80`,
+                    bg: `theme.danger:alpha.80`,
                   },
                   style: { width: "45%" },
                 }}
@@ -77,12 +77,12 @@ const Home = (props) => {
               </AppButton>
               <AppButton
                 {...{
-                  bg: `theme.100`,
+                  bg: `theme.success`,
                   _hover: {
-                    bg: `theme.100:alpha.80`,
+                    bg: `theme.success:alpha.80`,
                   },
                   _pressed: {
-                    bg: `theme.100:alpha.80`,
+                    bg: `theme.success:alpha.80`,
                   },
                   style: { width: "45%" },
                 }}
@@ -95,8 +95,8 @@ const Home = (props) => {
 
           <View style={[styles.ViewColumn]}>
             <Text>Inputs Area</Text>
-            <Input label='Email' placeholder='ENTER EMAIL' leftIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
-              rightIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
+            <Input label='Email' placeholder='ENTER EMAIL' leftIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
+              rightIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
             />
             <Input label='PASSWORD' placeholder='ENTER PASSWORD'
               InputProps={{
@@ -104,12 +104,13 @@ const Home = (props) => {
                 secureTextEntry: true,
                 placeholder: "********",
               }}
-              rightIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
+              rightIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
             />
           </View>
           <View style={styles.View}>
             <SingleProduct
               title={'Product Sample'}
+              subTitle={'Subtitle'}
               image={{ uri: 'https://i.pinimg.com/750x/81/8c/be/818cbe84101a8b0d8a9c87d6dafc9b81.jpg' }}
               index={0}
               id='33'

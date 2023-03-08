@@ -13,16 +13,16 @@ import { Platform } from 'react-native';
 const AppButton = props => {
   return (
     <Button
-      bg={`colors.300`}
+      bg={`theme.button`}
       _hover={{
-        bg: `colors.300:alpha.80`,
+        bg: `theme.button:alpha.80`,
       }}
       _pressed={{
-        bg: `colors.300:alpha.80`,
+        bg: `theme.button:alpha.80`,
       }}
       size={'lg'}
       _text={{
-        color: `text.0`,
+        color: `theme.buttonText`,
       }}
       width="100%"
       height={Platform.isPad ? 60 : 50}

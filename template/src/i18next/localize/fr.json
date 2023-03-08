@@ -15,7 +15,8 @@
   },
 
   "Drawer": {
-    "changeLanguage": "Changer de langue"
+    "changeLanguage": "Changer de langue",
+    "changeTheme": "Changer de Theme"
   },
 
   "BottomTab": {

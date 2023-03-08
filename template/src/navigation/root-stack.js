@@ -11,7 +11,7 @@ const AppNavigator = () => {
     <RootStack.Navigator screenOptions={{
       headerShown: false
     }}>
-      <RootStack.Screen name={screens.authStack} component={AuthStack} />
+      {/* <RootStack.Screen name={screens.authStack} component={AuthStack} /> */}
       <RootStack.Screen name={screens.drawerStack} component={DrawerStack} />
     </RootStack.Navigator>
   );

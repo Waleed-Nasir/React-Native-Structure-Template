@@ -6,8 +6,9 @@
  * @flow strict-local
  */
 
+import { View } from "native-base";
 import React from "react";
-import { Dimensions, Image, Platform, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, Platform, StyleSheet, TouchableOpacity } from "react-native";
 // import { Heart, HeartFill } from "../../assets/Images";
 import Text from "./Text";
 const { width, height } = Dimensions.get("screen");
@@ -62,7 +63,7 @@ const SingleProduct = (item) => {
   };
 
   return (
-    <View style={[styles.Card]}>
+    <View style={[styles.Card]} bg={'theme.background'}>
       <View
         style={[
           styles.CardImage,
@@ -96,7 +97,7 @@ const SingleProduct = (item) => {
         <Text style={[styles.text, { fontSize }]}>{title}</Text>
       </View>
       <View style={styles.CartTitle}>
-        <Text style={[styles.Subtitle]}>{subTitle}</Text>
+        <Text style={[styles.Subtitle]} color={'theme.primary'}>{subTitle}</Text>
       </View>
     </View>
   );
@@ -107,26 +108,22 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-    marginVertical: 10,
-    
   },
   CardImage: {
     height: height / 2.2,
     width: "100%",
     borderRadius: 16,
-    marginVertical: 20,
-    
   },
   CartTitle: {
     width: "100%",
     alignItems: "flex-start",
     marginVertical: 4,
+    padding:4
   },
   text: {
     fontSize: 16,
     fontWeight: "600",
     // fontFamily: FONTFAMILY.PoppinsBold,
-    color: "#000",
   },
   image: {
     width: "100%",
@@ -157,7 +154,6 @@ const styles = StyleSheet.create({
     fontSize: Platform.isPad ? 20 : 14,
     fontWeight: "600",
     // fontFamily: FONTFAMILY.PoppinsBold,
-    color: 'Blue',
   },
 });
 

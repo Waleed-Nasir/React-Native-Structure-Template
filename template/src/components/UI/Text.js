@@ -26,6 +26,7 @@ const Text = (props) => {
       ellipsizeMode="tail"
       {...props}
       style={style}
+      color={'theme.text'}
     />
   );
 };

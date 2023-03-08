@@ -1,11 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { textStyle } from '../../constants';
-import { theme } from '../../theme';
-
-const { colors } = theme;
-
 export default StyleSheet.create({
-  container: { height: '100%', backgroundColor: 'white' },
+  container: { height: '100%' },
   image: {
     width: '100%',
     height: 200,
@@ -18,7 +14,6 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   itemText: {
-    color: colors.primary,
     paddingLeft: 10,
     ...textStyle.heading,
   },

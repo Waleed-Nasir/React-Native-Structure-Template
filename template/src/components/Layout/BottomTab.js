@@ -1,4 +1,4 @@
-import { View } from "native-base";
+import { theme, useTheme, View } from "native-base";
 import React, { useEffect, useRef, useState } from "react";
 import {
   Dimensions, Image,
@@ -7,7 +7,6 @@ import {
 import * as Animatable from "react-native-animatable";
 import Text from "../UI/Text";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { theme } from "../../theme";
 const tabBarSection = [
   {
     title: "Home",
@@ -57,7 +56,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     height: 70,
-    backgroundColor: 'white',
     borderRadius: 14,
   },
   Bottom_Icon_Buttom: {
@@ -72,11 +70,11 @@ const styles = StyleSheet.create({
   tab: {
     width: "100%",
     backgroundColor: "transparent",
-    // paddingHorizontal: 20,
-    // paddingVertical: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     paddingBottom: Platform.OS === "ios" ? 30 : 4,
-    // position: 'absolute',
-    // bottom: 10
+    position: 'absolute',
+    bottom: 10
   },
   slider: {
     height: 5,
@@ -95,6 +93,7 @@ const BottomTab = (props) => {
   const [TabIndex, setTabIndex] = useState(0)
   const totalWidth = Dimensions.get("window").width;
   const tabWidth = totalWidth / 5;
+  const {colors} = useTheme();
 
   const V = {
     0: 0,
@@ -104,15 +103,15 @@ const BottomTab = (props) => {
   };
 
   const animateSlider = (index) => {
-    handleTextRef.current.transitionTo({
-      translateX: V[index],
-    });
+    // handleTextRef.current.transitionTo({
+    //   translateX: V[index],
+    // });
     setTabIndex(index)
   };
 
-  useEffect(() => {
-    animateSlider(TabIndex);
-  });
+  // useEffect(() => {
+  //   animateSlider(TabIndex);
+  // });
 
   const nonSelectd = (item, index) => {
     return (
@@ -126,14 +125,14 @@ const BottomTab = (props) => {
         <View style={styles.ButtonContainer}>
           {[
             TabIndex === index ? (
-              <Icon name={item.icon} size={24} color={theme.colors.success} />
+              <Icon name={item.icon} size={24} color={colors.theme.icon} />
               // <Image
               //   source={item.selectedIcon}
               //   {...{ ...styles[item.style] }}
               //   style={{ tintColor: 'black' }}
               // />
             ) : (
-              <Icon name={item.icon} size={24} color={theme.colors.primary} />
+              <Icon name={item.icon} size={24} color={colors.theme.ligth} />
               // <Image source={item.icon} {...{ ...styles[item.style] }} style={{ tintColor: 'white' }} />
             ),
           ]}
@@ -145,10 +144,11 @@ const BottomTab = (props) => {
 
   return (
 
-    <View style={styles.tab}>
+    <View style={styles.tab} bg={'theme.background'}>
       <View style={styles.bottomTab} shadow={1}
+        bg={'theme.background'}
       >
-        <Animatable.View
+        {/* <Animatable.View
           ref={handleTextRef}
           style={[
             styles.slider,
@@ -156,7 +156,7 @@ const BottomTab = (props) => {
               width: 50,
             },
           ]}
-        />
+        /> */}
         {tabBarSection.map((item, index) => nonSelectd(item, index))}
       </View>
     </View>
