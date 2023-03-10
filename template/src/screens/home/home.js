@@ -1,22 +1,26 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import HorizontalSlider from '../../components/Layout/HorizontalSlider';
-import Layout from '../../components/Layout/Layout';
-import VerticalSlider from '../../components/Layout/VerticalSlider';
-import AppButton from '../../components/UI/Button';
-import Chips from '../../components/UI/Chips';
-import Header from '../../components/UI/Header';
-import ICON from '../../components/UI/Icon';
-import Input from '../../components/UI/Input';
-import Item from '../../components/UI/Item';
-import Product from '../../components/UI/Product';
-import SingleProduct from '../../components/UI/SingleProduct';
-import Text from '../../components/UI/Text';
-import { FacebookButton, GoogleButton, MenuHeader } from '../../components';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  FacebookButton, GoogleButton,
+  HorizontalSlider,
+  Layout,
+  VerticalSlider,
+  AppButton,
+  Chips,
+  Header,
+  ICON,
+  Input,
+  Item,
+  Product,
+  SingleProduct,
+  Text,
+  Card,
+  CardSwiper,
+} from '../../components';
 
 import styles from './home.styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = (props) => {
   const [t, i18n] = useTranslation();
@@ -106,6 +110,12 @@ const Home = (props) => {
               }}
               rightIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
             />
+          </View>
+          <View style={[styles.ViewColumn, { marginVertical: 20 }]}>
+            <CardSwiper />
+          </View>
+          <View style={[styles.ViewColumn, { marginVertical: 20 }]}>
+            <Card />
           </View>
           <View style={styles.View}>
             <SingleProduct

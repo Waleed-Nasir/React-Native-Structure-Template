@@ -9,23 +9,9 @@
 import React from "react";
 import { Image, StyleSheet,  } from "react-native";
 import Text from "./Text";
-import { Pressable,View } from "native-base";
-import { theme } from "../../theme";
-const {
-  colors
-} = theme
-const {
-  transparent,
-  white,
-  black,
-  text,
-  primary,
-  success,
-  error,
-  background
-} = colors
+import { Pressable,useTheme,View } from "native-base";
+ 
 const Chips = ({ title, image, onPress }) => {
-
   return (
     <Pressable onPress={onPress} >
       {({ isPressed }) => {
@@ -43,7 +29,7 @@ const Chips = ({ title, image, onPress }) => {
             ]}
             bg={'theme.background'}
           >
-            <View style={styles.CardImage}>
+            <View style={styles.CardImage}  bg={'theme.background'}>
               <Image
                 source={image}
                 style={styles.Image}
@@ -79,7 +65,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   CardImage: {
-    backgroundColor: background,
     borderRadius: 100,
     width: 30,
     height: 30,
