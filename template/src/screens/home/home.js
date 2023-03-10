@@ -17,6 +17,7 @@ import {
   Text,
   Card,
   CardSwiper,
+  NewsFeedCard,
 } from '../../components';
 
 import styles from './home.styles';
@@ -38,8 +39,7 @@ const Home = (props) => {
 
       <Layout height={0}>
         <View style={styles.container}>
-
-
+          <NewsFeedCard />
           <View style={[styles.View, styles.ViewColumn]}>
             <Text>Buttons Area</Text>
             <Chips image={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} title={'Chips'} />

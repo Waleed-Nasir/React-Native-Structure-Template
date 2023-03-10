@@ -3,7 +3,7 @@ import { Image, StyleSheet, } from "react-native";
 import Text from "./Text";
 import { AspectRatio, Box, Center, Heading, HStack, Pressable, Stack, useTheme, View } from "native-base";
 
- const Card = () => {
+const Card = () => {
     return <Box alignItems="center">
         <Box maxW="80" rounded="lg" overflow="hidden" borderColor="coolGray.200" borderWidth="1"
             bg={'theme.background'}

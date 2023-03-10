@@ -14,6 +14,7 @@ export { default as Product } from './UI/Product';
 export { default as SingleProduct } from './UI/SingleProduct';
 export { default as Text } from './UI/Text';
 export { default as Card } from './UI/Card';
+export { default as NewsFeedCard } from './UI/NewsFeedCard';
 export { default as CardSwiper } from './UI/CardSwiper';
 export { default as FacebookButton } from './facebook-button';
 export { default as GoogleButton } from './google-button';
