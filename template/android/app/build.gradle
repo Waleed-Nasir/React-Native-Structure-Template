@@ -93,7 +93,10 @@ android {
     ndkVersion rootProject.ext.ndkVersion
 
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+compileOptions {
+	sourceCompatibility JavaVersion.VERSION_1_8
+	targetCompatibility JavaVersion.VERSION_1_8
+}
     namespace "com.rn.st.by.wn"
     defaultConfig {
         applicationId "com.rn.st.by.wn"
