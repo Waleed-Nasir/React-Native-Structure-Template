@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.rn.st.by.wn;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
