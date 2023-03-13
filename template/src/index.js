@@ -6,12 +6,14 @@ import { enableScreens } from 'react-native-screens';
 import SplashScreen from 'react-native-splash-screen';
 import AppNavigator from './navigation/root-stack';
 import { theme } from './theme';
-import "./i18next/index"; 
+import "./i18next/index";
+
 // import { DropDownHolder, PushNotification } from './components';
 
 enableScreens();
 
 const App = () => {
+ 
   useEffect(() => {
     console.disableYellowBox = true;
     if (Platform.OS == 'android') {

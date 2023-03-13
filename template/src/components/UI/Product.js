@@ -1,27 +1,12 @@
-import { Pressable,  } from "native-base";
+import { Pressable, View } from "native-base";
 import React from "react";
 import {
   Image,
   Platform,
   StyleSheet,
-  TouchableOpacity,
-  View,
+  TouchableOpacity
 } from "react-native";
-import { theme } from "../../theme";
 import Text from "./Text";
-const {
-  colors
-} = theme
-const {
-  transparent,
-  white,
-  black,
-  text,
-  primary,
-  success,
-  error,
-  background
-} = colors
 const Product = (item) => {
   const {
     title,
@@ -83,6 +68,7 @@ const Product = (item) => {
                 ],
               },
             ]}
+            bg={'theme.background'}
           >
             <View
               style={[
@@ -133,7 +119,6 @@ const styles = StyleSheet.create({
   Card: {
     // width: 220,
     // height: 300,
-    backgroundColor:white,
     marginHorizontal: 10,
     borderRadius: 20,
     padding: 10,
@@ -163,7 +148,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: "600",
-    color:'black'
     // fontFamily: FONTFAMILY.PoppinsBold,
   },
   image: {

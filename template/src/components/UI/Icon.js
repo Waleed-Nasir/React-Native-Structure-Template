@@ -10,7 +10,7 @@ import { Box, IconButton } from 'native-base';
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 const ICON = props => {
-  const {borderRadius = 8} = props;
+  const { borderRadius = 8, bg } = props;
   return (
     <Box alignItems="center" mx={1}>
       <IconButton
@@ -22,12 +22,12 @@ const ICON = props => {
           />
         }
         borderRadius={borderRadius}
-        bg={`theme.50`}
+        bg={bg || `theme.icon`}
         _hover={{
-          bg: `theme.50:alpha.70`,
+          bg: `theme.icon:alpha.70`,
         }}
         _pressed={{
-          bg: `theme.50:alpha.70`,
+          bg: `theme.icon:alpha.70`,
         }}
         p={props.p}
         size={'lg'}

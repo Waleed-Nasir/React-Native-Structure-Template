@@ -6,9 +6,9 @@
  * @flow strict-local
  */
 
-import { Pressable } from "native-base";
+import { Pressable,View } from "native-base";
 import React from "react";
-import { Image, StyleSheet, TouchableWithoutFeedback, View } from "react-native";
+import { Image, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import Text from "./Text";
 
 const Item = ({
@@ -29,7 +29,7 @@ const Item = ({
   return (
     <>
       <TouchableWithoutFeedback onPress={getNFT}>
-        <View style={styles.Card}>
+        <View style={styles.Card} bg={'theme.background'}>
           <View style={styles.row}>
             <Image
               source={image}
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#fff",
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: {
@@ -105,7 +104,6 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 8,
-    backgroundColor: 'red'
   },
   row: {
     flexDirection: "row",

@@ -7,27 +7,13 @@
  */
 
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet,  } from "react-native";
 import Text from "./Text";
-import { Pressable } from "native-base";
-import { theme } from "../../theme";
-const {
-  colors
-} = theme
-const {
-  transparent,
-  white,
-  black,
-  text,
-  primary,
-  success,
-  error,
-  background
-} = colors
+import { Pressable,useTheme,View } from "native-base";
+ 
 const Chips = ({ title, image, onPress }) => {
-
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPress} >
       {({ isPressed }) => {
         return (
           <View
@@ -41,15 +27,16 @@ const Chips = ({ title, image, onPress }) => {
                 ],
               },
             ]}
+            bg={'theme.background'}
           >
-            <View style={styles.CardImage}>
+            <View style={styles.CardImage}  bg={'theme.background'}>
               <Image
                 source={image}
                 style={styles.Image}
                 resizeMode={"contain"}
               />
             </View>
-            <Text style={styles.text}>{title}</Text>
+            <Text style={styles.text} color={'theme.text'}  >{title}</Text>
           </View>
         );
       }}
@@ -60,7 +47,6 @@ const Chips = ({ title, image, onPress }) => {
 const styles = StyleSheet.create({
   Card: {
     height: 40,
-    backgroundColor: white,
     marginHorizontal: 10,
     marginVertical: 4,
     borderRadius: 20,
@@ -79,7 +65,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   CardImage: {
-    backgroundColor: background,
     borderRadius: 100,
     width: 30,
     height: 30,
@@ -88,7 +73,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     // fontFamily: FONTFAMILY.PoppinsRegular,
     paddingHorizontal: 20,
-    color: text
   },
   Image: {
     width: "100%",

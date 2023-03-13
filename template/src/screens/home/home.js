@@ -1,22 +1,27 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { View } from 'react-native';
-import HorizontalSlider from '../../components/Layout/HorizontalSlider';
-import Layout from '../../components/Layout/Layout';
-import VerticalSlider from '../../components/Layout/VerticalSlider';
-import AppButton from '../../components/UI/Button';
-import Chips from '../../components/UI/Chips';
-import Header from '../../components/UI/Header';
-import ICON from '../../components/UI/Icon';
-import Input from '../../components/UI/Input';
-import Item from '../../components/UI/Item';
-import Product from '../../components/UI/Product';
-import SingleProduct from '../../components/UI/SingleProduct';
-import Text from '../../components/UI/Text';
-import { FacebookButton, GoogleButton, MenuHeader } from '../../components';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  FacebookButton, GoogleButton,
+  HorizontalSlider,
+  Layout,
+  VerticalSlider,
+  AppButton,
+  Chips,
+  Header,
+  ICON,
+  Input,
+  Item,
+  Product,
+  SingleProduct,
+  Text,
+  Card,
+  CardSwiper,
+  NewsFeedCard,
+} from '../../components';
 
 import styles from './home.styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = (props) => {
   const [t, i18n] = useTranslation();
@@ -34,8 +39,7 @@ const Home = (props) => {
 
       <Layout height={0}>
         <View style={styles.container}>
-
-
+          <NewsFeedCard />
           <View style={[styles.View, styles.ViewColumn]}>
             <Text>Buttons Area</Text>
             <Chips image={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} title={'Chips'} />
@@ -43,10 +47,10 @@ const Home = (props) => {
           <View style={[styles.ViewColumn]}>
             <Text>Icons Buttons Area</Text>
             <View style={[styles.View, { width: '100%', justifyContent: 'flex-start' }]}>
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
-              <ICON icon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
             </View>
           </View>
           <View style={[styles.View, styles.ViewColumn]}>
@@ -63,12 +67,12 @@ const Home = (props) => {
             <View style={[styles.View, { justifyContent: 'space-between', width: '100%' }]}>
               <AppButton
                 {...{
-                  bg: `theme.200`,
+                  bg: `theme.danger`,
                   _hover: {
-                    bg: `theme.200:alpha.80`,
+                    bg: `theme.danger:alpha.80`,
                   },
                   _pressed: {
-                    bg: `theme.200:alpha.80`,
+                    bg: `theme.danger:alpha.80`,
                   },
                   style: { width: "45%" },
                 }}
@@ -77,12 +81,12 @@ const Home = (props) => {
               </AppButton>
               <AppButton
                 {...{
-                  bg: `theme.100`,
+                  bg: `theme.success`,
                   _hover: {
-                    bg: `theme.100:alpha.80`,
+                    bg: `theme.success:alpha.80`,
                   },
                   _pressed: {
-                    bg: `theme.100:alpha.80`,
+                    bg: `theme.success:alpha.80`,
                   },
                   style: { width: "45%" },
                 }}
@@ -95,8 +99,8 @@ const Home = (props) => {
 
           <View style={[styles.ViewColumn]}>
             <Text>Inputs Area</Text>
-            <Input label='Email' placeholder='ENTER EMAIL' leftIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
-              rightIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
+            <Input label='Email' placeholder='ENTER EMAIL' leftIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
+              rightIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
             />
             <Input label='PASSWORD' placeholder='ENTER PASSWORD'
               InputProps={{
@@ -104,12 +108,19 @@ const Home = (props) => {
                 secureTextEntry: true,
                 placeholder: "********",
               }}
-              rightIcon={{ uri: 'https://thenounproject.com/api/private/icons/1581155/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkALLRh6U0dDMPZ1X28BizcN-wOG3nyX-G4-_HTcRH95tMGyVqfq9QbFAUmg_oampGlVfl_NuBChcRzt3TRJC055VQkw%3D%3D' }}
+              rightIcon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }}
             />
+          </View>
+          <View style={[styles.ViewColumn, { marginVertical: 20 }]}>
+            <CardSwiper />
+          </View>
+          <View style={[styles.ViewColumn, { marginVertical: 20 }]}>
+            <Card />
           </View>
           <View style={styles.View}>
             <SingleProduct
               title={'Product Sample'}
+              subTitle={'Subtitle'}
               image={{ uri: 'https://i.pinimg.com/750x/81/8c/be/818cbe84101a8b0d8a9c87d6dafc9b81.jpg' }}
               index={0}
               id='33'
