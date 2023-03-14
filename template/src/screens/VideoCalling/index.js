@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import {
     Button,
@@ -7,7 +7,8 @@ import {
     StyleSheet,
     TextInput,
     View,
-    Dimensions
+    Dimensions,
+    Pressable
 } from 'react-native';
 
 import {
@@ -22,6 +23,8 @@ import { useState } from 'react';
 import { checkCameraPermission } from '../../helpers/permisions'
 import firestore from '@react-native-firebase/firestore';
 import { Layout } from '../../components';
+import ButtonTab from './buttonTab';
+import { Box, PresenceTransition } from 'native-base';
 const { width, height } = Dimensions.get('screen')
 const VideoCallScreen = () => {
     const [remoteStream, setRemoteStream] = useState(null);
@@ -52,8 +55,8 @@ const VideoCallScreen = () => {
         });
         pc.current.addStream(local);
         setLocalStream(local);
-        const remote = new MediaStream();
-        setRemoteStream(remote);
+        // const remote = new MediaStream();
+        // setRemoteStream(remote);
 
         // Push tracks from local stream to peer connection
         local.getTracks().forEach(track => {
@@ -157,28 +160,67 @@ const VideoCallScreen = () => {
             });
         });
     };
-
+    const [isOpen, setIsOpen] = React.useState(true);
+    useEffect(() => {
+        startWebcam()
+    }, [])
     return (
         <>
-            {localStream && (
-                <RTCView
-                    streamURL={localStream?.toURL()}
-                    style={styles.stream}
-                    objectFit="cover"
-                    mirror
-                />
-            )}
+            <Pressable style={{ flex: 1 }} onPress={() => setIsOpen(!isOpen)}>
 
-            {remoteStream && (
-                <RTCView
-                    streamURL={remoteStream?.toURL()}
-                    style={styles.stream2}
-                    objectFit="cover"
-                    mirror
-                />
-            )}
-            <View style={styles.buttons}>
-                {!webcamStarted && (
+                {localStream && (
+                    <RTCView
+                        streamURL={localStream?.toURL()}
+                        style={styles.stream}
+                        objectFit="cover"
+                        mirror
+                    />
+                )}
+                {remoteStream && (
+                    <View style={[styles.stream2, { bottom: isOpen ? 100 : 20 }]}>
+                        <RTCView
+                            streamURL={remoteStream?.toURL()}
+                            style={[styles.streamBox]}
+                            objectFit="cover"
+                            mirror
+                        />
+                    </View>
+                )}
+                <View style={styles.buttons}>
+                    {/* <View style={{ flexDirection: 'row' }}>
+                        <Button title="Join call" onPress={joinCall} />
+                        <TextInput
+                            value={channelId}
+                            placeholder="callId"
+                            minLength={45}
+                            style={{ borderWidth: 1, padding: 5 }}
+                            onChangeText={newText => setChannelId(newText)}
+                        />
+                    </View> */}
+                    <PresenceTransition visible={isOpen} initial={{
+                        opacity: 0,
+                        // scale: 0,
+                        translateY: 34
+                    }} animate={{
+                        opacity: 1,
+                        translateY: 0,
+                        transition: {
+                            duration: 250
+                        }
+                    }}>
+                        <ButtonTab
+                            onStartWebcam={startWebcam}
+                            onStartCall={startCall}
+                            onJoinCall={joinCall}
+                            onEndCall={startWebcam}
+                            webcamStarted={webcamStarted}
+                            remoteStream={remoteStream}
+                            value={channelId}
+                            onChangeText={newText => setChannelId(newText)}
+                        />
+
+                    </PresenceTransition>
+                    {/* {!webcamStarted && (
                     <Button title="Start webcam" onPress={startWebcam} />
                 )}
                 {webcamStarted && <Button title="Start call" onPress={startCall} />}
@@ -193,8 +235,11 @@ const VideoCallScreen = () => {
                             onChangeText={newText => setChannelId(newText)}
                         />
                     </View>
-                )}
-            </View>
+                )} */}
+                </View>
+
+            </Pressable>
+
         </>
     );
 };
@@ -216,16 +261,23 @@ const styles = StyleSheet.create({
         width: width / 3,
         height: height / 5,
         position: 'absolute',
-        bottom: 100,
+        bottom: 20,
         right: 20,
-        zIndex: 1000
+        zIndex: 100000,
+        borderWidth: 5,
+        borderColor: 'black',
+        backgroundColor: 'red'
+    },
+    streamBox: {
+        width: '100%',
+        height: '100%'
     },
     buttons: {
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         flexDirection: 'column',
         position: 'absolute',
-        bottom: 100,
+        bottom: 0,
         width: '100%'
     },
 });
