@@ -8,7 +8,7 @@ import AppNavigator from './navigation/root-stack';
 import { theme } from './theme';
 import "./i18next/index";
 
-// import { DropDownHolder, PushNotification } from './components';
+import { DropDownHolder, PushNotification } from './components';
 
 enableScreens();
 
@@ -24,7 +24,8 @@ const App = () => {
   return (
     <NavigationContainer theme={theme}>
       <AppNavigator />
-      {/* <PushNotification />
+      <PushNotification />
+      {/*
          <DropdownAlert ref={(react-native-paperref) => DropDownHolder.setDropDown(ref)} /> */}
     </NavigationContainer>
   );
