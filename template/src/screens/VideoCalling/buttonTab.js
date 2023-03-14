@@ -10,8 +10,31 @@ import {
     TextInput,
     View,
 } from 'react-native';
-const ButtonTab = ({ onStartWebcam, onStartCall, onJoinCall, onEndCall, webcamStarted, remoteStream, value, onChangeText }) => {
+const ButtonTab = ({setFront,front, onStartWebcam, onStartCall, onJoinCall, onEndCall, webcamStarted, remoteStream, value, onChangeText, localStream }) => {
     const [joinCall, setJoinCall] = useState(false)
+    const [cameraState, setCameraState] = useState(true);
+    const [micState, setMicState] = useState(true);
+    function toggleCamera() {
+        cameraState ? setCameraState(false) : setCameraState(true)
+        localStream.getVideoTracks().forEach((track) => {
+            console.log('sc', track);
+            cameraState ? track.enabled = false : track.enabled = true
+        })
+    }
+    function switchCamera() {
+        localStream.getVideoTracks().forEach((track) => {
+            console.log('sc', track);
+            setFront(!front)
+            track._switchCamera();
+        })
+    }
+    function toggleMic() {
+        micState ? setMicState(false) : setMicState(true)
+        localStream.getAudioTracks().forEach((track) => {
+            console.log('sc', track);
+            micState ? track.enabled = false : track.enabled = true
+        })
+    }
     return (<Box bg={'theme.bacground'}>
         <HStack justifyContent='space-evenly' flex={1} alignItems={'center'} width={'100%'} paddingY={4} paddingX={3} bg={'theme.dark'}>
             {/* {!webcamStarted ? <AppButton onPress={onStartWebcam}>Start Call</AppButton> : null} */}
@@ -28,9 +51,10 @@ const ButtonTab = ({ onStartWebcam, onStartCall, onJoinCall, onEndCall, webcamSt
                     /> : null}
                 </View>
                 : null}
-            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon size={24} color={'white'} name="videocam" />} /> : null}
-            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon size={24} color={'white'} name="mic" />} /> : null}
-            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon size={24} color={'white'} name="call-end" />} /> : null}
+            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon onPress={switchCamera} size={24} color={'white'} name={"switch-camera"} />} /> : null}
+            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon onPress={toggleCamera} size={24} color={'white'} name={cameraState ? "videocam" : "videocam-off"} />} /> : null}
+            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon onPress={toggleMic} size={24} color={'white'} name={micState ? "mic" : "mic-off"} />} /> : null}
+            {remoteStream ? <IconButton variant="solid" onPress={onStartCall} borderRadius="full" size="lg" bg="theme.button" icon={<Icon onPress={toggleCamera} size={24} color={'white'} name="call-end" />} /> : null}
         </HStack>
     </Box>)
 };

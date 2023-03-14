@@ -28,9 +28,12 @@ import { Box, PresenceTransition } from 'native-base';
 const { width, height } = Dimensions.get('screen')
 const VideoCallScreen = () => {
     const [remoteStream, setRemoteStream] = useState(null);
+    const [remoteStreamUSers, setRemoteStreamUSers] = useState([]);
     const [webcamStarted, setWebcamStarted] = useState(false);
     const [localStream, setLocalStream] = useState(null);
     const [channelId, setChannelId] = useState(null);
+    const [front, setFront] = useState(true);
+
     console.log(channelId)
     const pc = useRef();
     const servers = {
@@ -55,6 +58,7 @@ const VideoCallScreen = () => {
         });
         pc.current.addStream(local);
         setLocalStream(local);
+
         // const remote = new MediaStream();
         // setRemoteStream(remote);
 
@@ -72,7 +76,9 @@ const VideoCallScreen = () => {
         };
 
         pc.current.onaddstream = event => {
+            console.log(event, 'setRemoteStream')
             setRemoteStream(event.stream);
+            setRemoteStreamUSers([...remoteStreamUSers, event.stream])
         };
         setWebcamStarted(true);
     };
@@ -173,7 +179,7 @@ const VideoCallScreen = () => {
                         streamURL={localStream?.toURL()}
                         style={styles.stream}
                         objectFit="cover"
-                        mirror
+                        mirror={front}
                     />
                 )}
                 {remoteStream && (
@@ -186,6 +192,16 @@ const VideoCallScreen = () => {
                         />
                     </View>
                 )}
+                {/* {remoteStreamUSers?.map((remoteStream, index) => (
+                    <View style={[styles.stream2, { bottom: isOpen ? 100 : index * 20 }]}>
+                        <RTCView
+                            streamURL={remoteStream?.toURL()}
+                            style={[styles.streamBox]}
+                            objectFit="cover"
+                            mirror
+                        />
+                    </View>
+                ))} */}
                 <View style={styles.buttons}>
                     {/* <View style={{ flexDirection: 'row' }}>
                         <Button title="Join call" onPress={joinCall} />
@@ -217,6 +233,9 @@ const VideoCallScreen = () => {
                             remoteStream={remoteStream}
                             value={channelId}
                             onChangeText={newText => setChannelId(newText)}
+                            localStream={localStream}
+                            setFront={setFront}
+                            front={front}
                         />
 
                     </PresenceTransition>
