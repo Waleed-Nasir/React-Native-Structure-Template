@@ -6,6 +6,7 @@ const screens = {
   appStack: 'AppStack',
   drawerStack: 'DrawerStack',
   bottomTabStack: 'BottomTabStack',
+  chatting: 'Chatting',
   MainNoBottomTabNavigator: "MainNoBottomTabNavigator"
 };
 

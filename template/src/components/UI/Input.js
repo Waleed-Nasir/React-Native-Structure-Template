@@ -15,7 +15,7 @@ import ICON from './Icon';
 import Text from './Text';
 import { useTheme } from 'native-base';
 const { width } = Dimensions.get('screen');
- 
+
 
 const Input = ({
   leftIcon = false,
@@ -28,16 +28,17 @@ const Input = ({
   InputProps = {},
   IconPress = () => { },
 }) => {
-const {colors} = useTheme();
+  const { colors } = useTheme();
   return (
     <View style={[styles.Input]} >
       <Text style={[styles.label, LableStyle]}>{label}</Text>
-      <View style={[styles.SectionStyle,{backgroundColor: colors?.theme?.background,borderColor:colors?.theme?.borderColor}, SectionStyle]}>
+      <View style={[styles.SectionStyle, { backgroundColor: colors?.theme?.background, borderColor: colors?.theme?.borderColor }, SectionStyle]}>
         {leftIcon ? (
           <Image source={leftIcon} style={styles.ImageStyle} />
         ) : null}
         <TextInput
-          style={[styles.InputStyle,{color: colors.theme.text}, InputStyle]}
+          
+          style={[styles.InputStyle, { color: colors.theme.text }, InputStyle]}
           placeholder={placeholder}
           underlineColorAndroid="transparent"
           {...InputProps}
