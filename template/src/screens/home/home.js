@@ -22,6 +22,7 @@ import {
 
 import styles from './home.styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { screens } from '../../config';
 
 const Home = (props) => {
   const [t, i18n] = useTranslation();
@@ -39,6 +40,7 @@ const Home = (props) => {
 
       <Layout height={0}>
         <View style={styles.container}>
+          <AppButton onPress={() => props.navigation.navigate(screens.MainNoBottomTabNavigator)}>Try VideoCalling</AppButton>
           <NewsFeedCard />
           <View style={[styles.View, styles.ViewColumn]}>
             <Text>Buttons Area</Text>

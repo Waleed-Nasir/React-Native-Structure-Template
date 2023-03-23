@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { check, PERMISSIONS, RESULTS } from 'react-native-permissions';
+import { check, PERMISSIONS, RESULTS ,request} from 'react-native-permissions';
 
 const os = Platform.OS;
 
@@ -7,7 +7,7 @@ const os = Platform.OS;
 
 const cameraPermission = os == 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA;
 
-const checkCameraPermission = () => {
+export const checkCameraPermission = () => {
   check(cameraPermission)
     .then((result) => {
       switch (result) {
@@ -15,6 +15,7 @@ const checkCameraPermission = () => {
           console.log('This feature is not available (on this device / in this context)');
           break;
         case RESULTS.DENIED:
+          request(PERMISSIONS.IOS.CAMERA || PERMISSIONS.ANDROID.CAMERA)
           console.log('The permission has not been requested / is denied but requestable');
           break;
         case RESULTS.GRANTED:
@@ -30,6 +31,6 @@ const checkCameraPermission = () => {
     });
 };
 
-export default {
-  checkCameraPermission,
-};
+// export default {
+//   checkCameraPermission,
+// };

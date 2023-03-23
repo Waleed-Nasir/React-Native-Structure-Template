@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.rn.st.by.wn;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

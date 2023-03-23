@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "933161698423",
+    "project_id": "react-native-video-sdk",
+    "storage_bucket": "react-native-video-sdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933161698423:android:81aad8994ae27ac925f272",
+        "android_client_info": {
+          "package_name": "com.reactnativevideocall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933161698423-ehmt6rprl16l6p6mlc8nvt8c4260jckf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR2V0boDHIEQWeQcsQidEfASJBKx_e-no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933161698423-ehmt6rprl16l6p6mlc8nvt8c4260jckf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933161698423:android:a82b53a3cddda92025f272",
+        "android_client_info": {
+          "package_name": "com.rn.st.by.wn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933161698423-ehmt6rprl16l6p6mlc8nvt8c4260jckf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR2V0boDHIEQWeQcsQidEfASJBKx_e-no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933161698423-ehmt6rprl16l6p6mlc8nvt8c4260jckf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

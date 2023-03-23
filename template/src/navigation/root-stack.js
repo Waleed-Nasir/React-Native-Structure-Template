@@ -3,6 +3,7 @@ import React from 'react';
 import { screens } from '../config';
 import AuthStack from './auth-stack';
 import DrawerStack from './drawer-stack';
+import MainNoBottomTabNavigator from './no-tab-stack';
 
 const RootStack = createStackNavigator();
 
@@ -13,6 +14,7 @@ const AppNavigator = () => {
     }}>
       {/* <RootStack.Screen name={screens.authStack} component={AuthStack} /> */}
       <RootStack.Screen name={screens.drawerStack} component={DrawerStack} />
+      <RootStack.Screen name={screens.MainNoBottomTabNavigator} component={MainNoBottomTabNavigator} />
     </RootStack.Navigator>
   );
 };
