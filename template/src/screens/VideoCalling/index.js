@@ -176,7 +176,7 @@ const VideoCallScreen = () => {
 
                 {localStream && (
                     <RTCView
-                        streamURL={localStream?.toURL()}
+                        streamURL={remoteStream?.toURL() ? remoteStream?.toURL() : localStream?.toURL()}
                         style={styles.stream}
                         objectFit="cover"
                         mirror={front}
@@ -185,7 +185,7 @@ const VideoCallScreen = () => {
                 {remoteStream && (
                     <View style={[styles.stream2, { bottom: isOpen ? 100 : 20 }]}>
                         <RTCView
-                            streamURL={remoteStream?.toURL()}
+                            streamURL={localStream?.toURL()}
                             style={[styles.streamBox]}
                             objectFit="cover"
                             mirror
