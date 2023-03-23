@@ -23,6 +23,7 @@ import {
 import styles from './home.styles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { screens } from '../../config';
+import { ChatHome } from '../Chatting/screens/Home';
 
 const Home = (props) => {
   const [t, i18n] = useTranslation();
@@ -39,6 +40,11 @@ const Home = (props) => {
         CenterText={i18('Home.title')} {...props} />
 
       <Layout height={0}>
+        <View>
+          <ChatHome />
+        </View>
+
+
         <View style={styles.container}>
           <AppButton onPress={() => props.navigation.navigate(screens.MainNoBottomTabNavigator)}>Try VideoCalling</AppButton>
           <NewsFeedCard />
