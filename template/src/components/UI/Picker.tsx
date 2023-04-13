@@ -1,5 +1,4 @@
 import React, { FC, ReactElement, useRef, useState } from 'react';
-import { Colors } from '../../assets/Colors';
 import {
   FlatList,
   StyleSheet,
@@ -116,7 +115,7 @@ const styles = StyleSheet.create({
   },
   shadow: {
     backgroundColor: '#fff',
-    shadowColor: Colors.LightGray,
+    shadowColor: 'lightgray',
     shadowOffset: {
       width: 0,
       height: 5,
@@ -127,7 +126,7 @@ const styles = StyleSheet.create({
   },
   line: {
     height: 0.4,
-    backgroundColor: Colors.LightGray,
+    backgroundColor: 'lightgray',
   }
 });
 

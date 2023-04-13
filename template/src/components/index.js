@@ -16,6 +16,7 @@ export { default as Text } from './UI/Text';
 export { default as Card } from './UI/Card';
 export { default as NewsFeedCard } from './UI/NewsFeedCard';
 export { default as CardSwiper } from './UI/CardSwiper';
+export { default as Picker } from './UI/Picker';
 export { default as FacebookButton } from './facebook-button';
 export { default as GoogleButton } from './google-button';
 export { default as PushNotification } from './push-notifications';

@@ -18,6 +18,7 @@ import {
   Card,
   CardSwiper,
   NewsFeedCard,
+  Picker
 } from '../../components';
 
 import styles from './home.styles';
@@ -29,7 +30,12 @@ const Home = (props) => {
   const i18 = (key) => {
     return t(key);
   };
-
+  const _data = [
+    { label: "Redo", value: "1", color: 'black' },
+    { label: "Download", value: "2", color: 'black' },
+    { label: "Delete", value: "3", color: "red" },
+    { label: "Share Link", value: "4", color: 'pink' },
+  ];
   return (
     <>
       <Header
@@ -51,6 +57,24 @@ const Home = (props) => {
               <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
               <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
               <ICON icon={{ uri: 'https://i.pinimg.com/750x/a7/fe/14/a7fe14f37ae69ce4680d3d654f069185.jpg' }} />
+              <Picker
+                onSelect={(E) => {}}
+                data={_data}
+                dropDownStyle={[
+                  {
+                    position: "absolute",
+                    right: 30,
+                  },
+                  Platform.OS === "android" ? { marginTop: -40 } : {},
+                ]}
+                viewStyle={{
+                  padding: 5,
+                  height: 80,
+                  width: 80
+                }}
+              >
+                <Icon name={'home'} size={24} />
+              </Picker>
             </View>
           </View>
           <View style={[styles.View, styles.ViewColumn]}>
@@ -148,6 +172,9 @@ const Home = (props) => {
               id='33'
             />
           </View>
+
+
+
 
           <GoogleButton />
           <FacebookButton />
